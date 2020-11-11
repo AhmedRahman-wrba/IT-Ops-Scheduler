@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_m2m_segment">
+    <sys_sg_item_stream_m2m_segment action="INSERT_OR_UPDATE">
+        <item_stream display_value="Shift Days Item Stream">f9bba129dbcf9450458d789e3b9619a9</item_stream>
+        <segment display_value="Shift Days Item Stream Segment">3dbba129dbcf9450458d789e3b9619a8</segment>
+        <sys_class_name>sys_sg_item_stream_m2m_segment</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b9bba129dbcf9450458d789e3b9619aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_sg_item_stream_m2m_segment_b9bba129dbcf9450458d789e3b9619aa</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:28</sys_updated_on>
+    </sys_sg_item_stream_m2m_segment>
+</record_update>

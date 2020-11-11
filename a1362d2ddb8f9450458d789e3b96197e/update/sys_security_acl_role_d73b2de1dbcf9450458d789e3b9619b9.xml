@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:57:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d73b2de1dbcf9450458d789e3b9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_wab_it_ops_sched_shift_days.x_wab_it_ops_sched.admin</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_security_acl display_value="x_wab_it_ops_sched_shift_days">df3b2de1dbcf9450458d789e3b9619b5</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_d73b2de1dbcf9450458d789e3b9619b9</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:57:24</sys_updated_on>
+        <sys_user_role display_value="x_wab_it_ops_sched.admin" name="x_wab_it_ops_sched.admin">1f46a1addb8f9450458d789e3b9619b7</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

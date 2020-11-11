@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_app_install">
+    <sys_push_notif_app_install action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <last_registered_on>2020-09-14 16:51:59</last_registered_on>
+        <sys_class_name>sys_push_notif_app_install</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-14 16:51:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>310aaab4db5718909ef5304d3b961909</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>fdFIKE7WNtE:APA91bFqV8gRbCVTAvWeXhj0RZksAOPVv3OxdZ53I3xs0EjdehVxFhyOPT3NvESN_Tk_mqnJWyHH1dPPeaAPrRZRuV4QQ1Ye_yelIyQfi3A0d07ZKvv33Df60ErhTQ0e6X_h1XZi9UDY</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_push_application_id display_value="ServiceNow Classic Mobile Application">ab704041ff1102009738ffffffffff33</sys_push_application_id>
+        <sys_push_platform_id display_value="Google">53e75f30ff0002009738ffffffffff12</sys_push_platform_id>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_push_notif_app_install_310aaab4db5718909ef5304d3b961909</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-14 16:51:59</sys_updated_on>
+        <sys_user_id display_value="Ahmed Rahman ">fe4448e1db597f009d1cb4b8f49619c0</sys_user_id>
+        <token>fdFIKE7WNtE:APA91bFqV8gRbCVTAvWeXhj0RZksAOPVv3OxdZ53I3xs0EjdehVxFhyOPT3NvESN_Tk_mqnJWyHH1dPPeaAPrRZRuV4QQ1Ye_yelIyQfi3A0d07ZKvv33Df60ErhTQ0e6X_h1XZi9UDY</token>
+    </sys_push_notif_app_install>
+</record_update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="System (apps/system)" source="apps/system">0cc62021db33220099fefd051d96196c</dependency>
+        <min_version/>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:32:04</sys_created_on>
+        <sys_id>1b76996edbab90509ef5304d3b9619e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:32:04</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

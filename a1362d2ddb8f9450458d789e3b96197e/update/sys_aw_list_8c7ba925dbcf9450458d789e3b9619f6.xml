@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_aw_list">
+    <sys_aw_list action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="User involved">087ba925dbcf9450458d789e3b9619f0</category>
+        <columns>number,priority,state,assigned_to,assignment_group,short_description,opened_at,opened_by,closed_at,closed_by</columns>
+        <condition/>
+        <groups/>
+        <list_attributes/>
+        <order>400</order>
+        <roles/>
+        <sys_class_name>sys_aw_list</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:58:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>8c7ba925dbcf9450458d789e3b9619f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>All</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_aw_list_8c7ba925dbcf9450458d789e3b9619f6</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:58:16</sys_updated_on>
+        <table>x_wab_it_ops_sched_user_involved</table>
+        <title>All</title>
+        <workspace display_value="IT Ops Scheduler">b26ba5e1dbcf9450458d789e3b9619fd</workspace>
+    </sys_aw_list>
+</record_update>

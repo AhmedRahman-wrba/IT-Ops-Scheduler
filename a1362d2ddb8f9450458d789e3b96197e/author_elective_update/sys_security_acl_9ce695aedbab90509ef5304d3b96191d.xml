@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_wab_it_ops_sched_shift_history</description>
+        <express_security>false</express_security>
+        <name>x_wab_it_ops_sched_shift_history</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:33:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9ce695aedbab90509ef5304d3b96191d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_wab_it_ops_sched_shift_history</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_security_acl_9ce695aedbab90509ef5304d3b96191d</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:33:46</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</application>
+        <file_path/>
+        <instance_id>ddf3e82ddb73ae404c1ff70fbf9619ee</instance_id>
+        <instance_name>warbabankkw</instance_name>
+        <name>sys_security_acl_9ce695aedbab90509ef5304d3b96191d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on x_wab_it_ops_sched_shift_history</description><express_security>false</express_security><name>x_wab_it_ops_sched_shift_history</name><operation display_value="read">read</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by><sys_created_on>2020-10-02 07:33:46</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>9ce695aedbab90509ef5304d3b96191d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_wab_it_ops_sched_shift_history</sys_name><sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope><sys_update_name>sys_security_acl_9ce695aedbab90509ef5304d3b96191d</sys_update_name><sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by><sys_updated_on>2020-10-02 07:33:46</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-251028985</payload_hash>
+        <record_name>x_wab_it_ops_sched_shift_history</record_name>
+        <reverted_from/>
+        <source>e53661addb8f9450458d789e3b961927</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:33:46</sys_created_on>
+        <sys_id>50e695aedbab90509ef5304d3b96192d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>174e83b2d040000001</sys_recorded_at>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:33:46</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>58e695ae09ab90504dfbe79d16f8b82c</update_guid>
+        <update_guid_history>58e695ae09ab90504dfbe79d16f8b82c:-251028985</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:35:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>081714f2629f4d799373acf604d1f7f1</sys_id>
+        <sys_metadata>9ce695aedbab90509ef5304d3b96191d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_wab_it_ops_sched_shift_history</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_parent display_value="">d376996edbab90509ef5304d3b9619cf</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_scope_delete display_value="">2b09ec3683614e248b7b5261b9073f39</sys_scope_delete>
+        <sys_update_name>sys_security_acl_9ce695aedbab90509ef5304d3b96191d</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_9ce695aedbab90509ef5304d3b96191d">50e695aedbab90509ef5304d3b96192d</sys_update_version>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:35:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

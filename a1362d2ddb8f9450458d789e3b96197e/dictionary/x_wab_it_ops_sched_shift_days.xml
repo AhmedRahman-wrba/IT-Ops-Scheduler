@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Shift Days" max_length="40" name="x_wab_it_ops_sched_shift_days" sizeclass="0" text_index="true" type="collection">
+        <element attributes="encode_utf8=false" label="Shift 1 reference" max_length="32" name="shift_1_reference" reference="x_wab_it_ops_sched_shift_table" type="reference"/>
+        <element attributes="encode_utf8=false" label="Shift 1 User" max_length="32" name="shift_1_user" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element label="Shift 1 User 2" max_length="32" name="shift_1_user_2" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element attributes="encode_utf8=false" label="Shift 2 reference" max_length="32" name="shift_2_reference" reference="x_wab_it_ops_sched_shift_table" type="reference"/>
+        <element attributes="encode_utf8=false" label="Shift 2 User" max_length="32" name="shift_2_user" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element label="Shift 2 User 2" max_length="32" name="shift_2_user_2" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element attributes="encode_utf8=false" label="Shift 3 reference" max_length="32" name="shift_3_reference" reference="x_wab_it_ops_sched_shift_table" type="reference"/>
+        <element attributes="encode_utf8=false" label="Shift 3 User" max_length="32" name="shift_3_user" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element label="Shift 3 User 2" max_length="32" name="shift_3_user_2" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Shift Day" max_length="40" name="shift_day" type="glide_date"/>
+        <index name="index">
+            <element name="shift_1_user_2"/>
+        </index>
+        <index name="index2">
+            <element name="shift_2_user"/>
+        </index>
+        <index name="index3">
+            <element name="shift_2_reference"/>
+        </index>
+        <index name="index4">
+            <element name="shift_2_user_2"/>
+        </index>
+        <index name="index5">
+            <element name="shift_1_user"/>
+        </index>
+        <index name="index6">
+            <element name="shift_3_reference"/>
+        </index>
+        <index name="index7">
+            <element name="shift_1_reference"/>
+        </index>
+        <index name="index8">
+            <element name="shift_3_user_2"/>
+        </index>
+        <index name="index9">
+            <element name="shift_3_user"/>
+        </index>
+    </element>
+</database>

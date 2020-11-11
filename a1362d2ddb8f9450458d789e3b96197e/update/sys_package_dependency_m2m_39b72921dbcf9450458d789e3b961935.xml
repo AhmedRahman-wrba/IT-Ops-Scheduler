@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Workflow Runtime Engine" source="com.glideapp.workflow">0357e461db33220099fefd051d96190d</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:42:00</sys_created_on>
+        <sys_id>39b72921dbcf9450458d789e3b961935</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:42:00</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

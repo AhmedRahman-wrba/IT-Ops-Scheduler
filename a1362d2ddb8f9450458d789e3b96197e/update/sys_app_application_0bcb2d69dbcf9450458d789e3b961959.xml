@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <mobile_app_menu/>
+        <name/>
+        <order/>
+        <roles>x_wab_it_ops_sched.admin,x_wab_it_ops_sched.supervisor,x_wab_it_ops_sched.user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0bcb2d69dbcf9450458d789e3b961959</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>IT Ops Scheduler</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_app_application_0bcb2d69dbcf9450458d789e3b961959</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:50</sys_updated_on>
+        <title>IT Ops Scheduler</title>
+        <view_name/>
+        <view_on_mobile>false</view_on_mobile>
+    </sys_app_application>
+</record_update>

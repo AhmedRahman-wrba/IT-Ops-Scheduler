@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="user_8_preferred_assignment" label="User 8 Preferred Assignment" language="en" table="x_wab_it_ops_sched_reference_table">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>user_8_preferred_assignment</element>
+            <help/>
+            <hint/>
+            <label>User 8 Preferred Assignment</label>
+            <language>en</language>
+            <name>x_wab_it_ops_sched_reference_table</name>
+            <plural>User 8 Preferred Assignments</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+            <sys_created_on>2020-09-14 16:22:15</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>5e332670db5718909ef5304d3b961930</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>User 8 Preferred Assignment</sys_name>
+            <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+            <sys_update_name>sys_documentation_x_wab_it_ops_sched_reference_table_user_8_preferred_assignment_en</sys_update_name>
+            <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+            <sys_updated_on>2020-09-14 16:22:15</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

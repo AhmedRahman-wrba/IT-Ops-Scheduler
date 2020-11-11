@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_list_screen">
+    <sys_sg_list_screen action="INSERT_OR_UPDATE">
+        <available_offline>false</available_offline>
+        <description> User involved</description>
+        <dynamic_prefetch_count/>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="icon-Address-Book">cdbbed25dbcf9450458d789e3b961983</icon>
+        <name>User involveds</name>
+        <roles_override/>
+        <sys_class_name>sys_sg_list_screen</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:27</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a5bb6129dbcf9450458d789e3b961924</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>User involveds</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_sg_list_screen_a5bb6129dbcf9450458d789e3b961924</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:27</sys_updated_on>
+    </sys_sg_list_screen>
+</record_update>

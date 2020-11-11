@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Holidays Record" max_length="40" name="x_wab_it_ops_sched_holidays_record" sizeclass="0" type="collection">
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element label="Type of holiday" max_length="40" name="type_of_holiday" type="string"/>
+        <element label="User" max_length="32" name="user" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

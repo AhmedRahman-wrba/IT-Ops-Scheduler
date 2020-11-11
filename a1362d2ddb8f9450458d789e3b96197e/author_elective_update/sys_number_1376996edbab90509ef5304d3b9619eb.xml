@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="x_wab_it_ops_sched_shift_history">x_wab_it_ops_sched_shift_history</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>SHI</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:32:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1376996edbab90509ef5304d3b9619eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SHI</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_number_1376996edbab90509ef5304d3b9619eb</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:32:04</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</application>
+        <file_path/>
+        <instance_id>ddf3e82ddb73ae404c1ff70fbf9619ee</instance_id>
+        <instance_name>warbabankkw</instance_name>
+        <name>sys_number_1376996edbab90509ef5304d3b9619eb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="x_wab_it_ops_sched_shift_history">x_wab_it_ops_sched_shift_history</category><maximum_digits>7</maximum_digits><number>1000</number><prefix>SHI</prefix><sys_class_name>sys_number</sys_class_name><sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by><sys_created_on>2020-10-02 07:32:04</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>1376996edbab90509ef5304d3b9619eb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>SHI</sys_name><sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope><sys_update_name>sys_number_1376996edbab90509ef5304d3b9619eb</sys_update_name><sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by><sys_updated_on>2020-10-02 07:32:04</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>-168954743</payload_hash>
+        <record_name>SHI</record_name>
+        <reverted_from/>
+        <source>e53661addb8f9450458d789e3b961927</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:32:05</sys_created_on>
+        <sys_id>af76d96edbab90509ef5304d3b96190f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>174e839a18b0000001</sys_recorded_at>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:32:05</sys_updated_on>
+        <type>Number</type>
+        <update_guid>a776d96ec2ab9050c93b86fcb898920f</update_guid>
+        <update_guid_history>a776d96ec2ab9050c93b86fcb898920f:-168954743</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-10-02 07:35:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>1e19b23d25b549e884d9a1df16b9b440</sys_id>
+        <sys_metadata>1376996edbab90509ef5304d3b9619eb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SHI</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_parent display_value="">f126d16edbab90509ef5304d3b96193b</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_scope_delete display_value="">2b09ec3683614e248b7b5261b9073f39</sys_scope_delete>
+        <sys_update_name>sys_number_1376996edbab90509ef5304d3b9619eb</sys_update_name>
+        <sys_update_version display_value="sys_number_1376996edbab90509ef5304d3b9619eb">af76d96edbab90509ef5304d3b96190f</sys_update_version>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 07:35:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

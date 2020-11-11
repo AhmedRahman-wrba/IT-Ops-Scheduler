@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Shift Table" max_length="40" name="x_wab_it_ops_sched_shift_table" sizeclass="3" text_index="true" type="collection">
+        <element label="End Time" max_length="40" name="end_time" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Start Time" max_length="40" name="start_time" type="glide_date_time"/>
+    </element>
+</database>

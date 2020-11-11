@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_wab_it_ops_sched_holidays_record</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Schedule make on Holiday update</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[/******************************************************
+**********************TODO*****************************
+-> Make the Table containing shift history
+-> Automatic pickup of history from history table. -LATER-> In case of absence of history
+-> Replace 'M','A' and 'N' with actual shift sys_id
+******************************************************/
+
+// Note: If dutyDays(onDutyFor) is -1000, the user is on holiday and cannot be assigned to shift
+
+
+//$$$$$$$$$$$ Variables declaration starts here
+//This limit represents the number of days for which shift is being generated
+var adminAssignedTotalDays = 30;
+
+
+var shiftsList=[];
+var usersList=[];
+var shiftDaysList=[];
+
+//This limit represents the running of the reference table loop
+var totalDays = (adminAssignedTotalDays);
+
+//Reference table declaration
+var referenceTable;
+
+//These arrays are for assigning to shift table
+var morningShiftMembers=[];
+var afternoonShiftMembers=[];
+var nightShiftMembers=[];
+var onShiftMembers=[];
+var poolArray=[];
+
+//These values will represent the minimum and maximum number of people allowed on shifts (hard limit)
+/////NOTE These values will have to be calculated from equation later on
+var hardLowerLimit = 4;
+var hardUpperLimit = 5;
+
+//Limits for number of working days and number of days in week(one rotation)
+var numOfWorkingDays=4;
+var numOfDaysInWeek = 6;
+
+// On holiday value used to represent a user on holiday
+var onHoliday=1000;
+
+// Variables for storing startDifference and endDifference
+var startDifference;
+var endDifference;
+var startTime;
+var endTime;
+
+
+
+var weekDay;
+var temp;
+var tempArray=[];
+var membersNeeded=0;
+var numberOfPeopleOnShift=0;
+var tempSize;
+var temp1;
+var temp2;
+var obj;
+
+
+
+var activeMembersOnHoliday=[];
+
+//These values are to be taken dynamically from the shift table
+var numberOfPeopleShouldBeOnMorning=1;
+var numberOfPeopleShouldBeOnAfternoon=2;
+var numberOfPeopleShouldBeOnNight=1;
+
+
+var poolOfUsables=[];
+//$$$$$$$$$$$ Variables declaration ends here
+
+
+
+//$$$$$$$$$$$ Helper functions start here
+
+function changeShiftAssignmentValue(current){
+	if(current=="M")return "A";
+	else if(current=="A") return "N";
+	else if(current=="N") return "M";
+	return "M";
+}
+
+function nextOnDutyForValue(currentValue, onHolidayValue, numberOfDaysInWeek, nextOnDutyValue){
+	//Check if not on holiday
+	if(currentValue!=onHolidayValue){
+		if(currentValue<numberOfDaysInWeek)return currentValue+1;
+		else if(currentValue==numberOfDaysInWeek){
+			return 1;
+		}
+	}else{
+		//If on holiday, check if the holiday has ended
+		if(nextOnDutyValue!=onHolidayValue){
+			return 1;
+		}
+	}
+	return currentValue;
+}
+
+function placeOnHoliday(numOfWorkingDays){
+	return numOfWorkingDays+1;
+}
+
+function returnTrueIfUserOnShift(onDutyDay,numberOfWorkingDays){
+	if(onDutyDay<=numberOfWorkingDays) return true;
+	return false;
+}
+
+function assignToShiftArrayOrPool(preferred, currentShiftArray, shiftArrayMaxSize, poolArray){
+	
+}
+
+//$$$$$$$$$$$ Helper functions end here
+
+
+
+/*
+///////////////////////////////////////////// Handy way to filter an array
+var myArray = myArray.filter(function(item) {
+  return condition;
+});
+*/
+
+
+var shifts = new GlideRecord('x_wab_it_ops_sched_shift_table');
+shifts.addActiveQuery();
+shifts.query();
+shiftsList.length = 0; 
+
+while(shifts.next()){
+	gs.log("Shift start time is: " + shifts.start_time);
+	gs.log("Shift end time is: " + shifts.end_time);
+	//gs.log("Shift start time is: " + shifts.start_time);
+	//gs.log("Object type is: " + typeof shifts.start_time);
+	temp = new GlideDateTime();
+	temp1 = new GlideDateTime(shifts.start_time);
+	temp2 = new GlideDateTime(shifts.end_time);
+	//gs.log("temp is: "+ temp);
+	startDifference = GlideDateTime.subtract(temp1, temp);
+	endDifference = GlideDateTime.subtract(temp2, temp);
+	//gs.info("Start After is: "+startDifference.getDayPart());
+	//gs.info("End after is: "+ endDifference.getDayPart());
+	/*
+	obj = {
+		id: shifts.sys_id.toString(),
+		name: shifts.name,
+		start: shifts.start_time,
+		//startDifference: GlideDateTime.subtract(shifts.start_time, temp),
+		startDifference: startDifference.getDayPart(),
+		end: shifts.end_time,
+		//endDifference: GlideDateTime.subtract(shifts.end_time, temp)
+		endDifference: endDifference.getDayPart()
+	};
+	*/
+	shiftsList.push({
+		id: shifts.sys_id.toString(),
+		name: shifts.name,
+		start: temp1,
+		//startDifference: GlideDateTime.subtract(shifts.start_time, temp),
+		startDifference: startDifference.getDayPart(),
+		end: temp2,
+		//endDifference: GlideDateTime.subtract(shifts.end_time, temp)
+		endDifference: endDifference.getDayPart()
+	});
+	temp=null;
+	temp1=null;
+	temp2=null;
+	//gs.log(shifts.sys_id);
+	startDifference=null;
+	endDifference=null;
+
+	//gs.log("*Shift start time is: " + obj.start);
+	//gs.log("*Shift end time is: " + obj.end);
+	obj=null;
+	//gs.log("Type of obj is: "+ typeof obj);
+	//gs.log(obj.name);
+	
+}
+
+for(i=0; i<shiftsList.length; i++){
+	gs.log("Shift name is: "+ shiftsList[i].name);
+	gs.log("**Shift start time is: " + shiftsList[i].start);
+	gs.log("**Shift end time is: " + shiftsList[i].end);
+
+}
+
+
+//gs.log(GlideDateTime.subtract(shiftsList[0].start_time, new GlideDateTime()));
+//Initialization of base days difference
+
+
+
+var staff = new GlideRecord('x_wab_it_ops_sched_user_involved');
+staff.addActiveQuery();
+staff.query();
+
+var staffCount=0;
+while(staff.next()){
+	
+	var obj2 = {
+		number: staffCount,
+		id: staff.sys_id.toString(),
+		//preferred: staff.preferred_shift.toString()
+		
+	};
+	//gs.log(JSON.stringify(obj2));
+	usersList.push(obj2);
+	//gs.log(staff.sys_id);
+	staffCount++;
+}
+
+//gs.log(JSON.stringify(usersList));
+
+///////////////////////////// Inserting sample history data for users starts here
+usersList[0].active = true;
+usersList[0].onDutyFor = 3;
+usersList[0].currentShiftAssignment = "M";
+usersList[0].preferred= "M";
+
+usersList[1].active = true;
+usersList[1].onDutyFor = 1;
+usersList[1].currentShiftAssignment = "M";
+usersList[0].preferred= "M";
+
+usersList[2].active = true;
+usersList[2].onDutyFor = 3;
+usersList[2].currentShiftAssignment = "A";
+usersList[0].preferred= "A";
+
+
+usersList[3].active = true;
+usersList[3].onDutyFor = 1;
+usersList[3].currentShiftAssignment = "A";
+usersList[0].preferred= "A";
+
+
+usersList[4].active = true;
+usersList[4].onDutyFor = 1;
+usersList[4].currentShiftAssignment = "N";
+usersList[0].preferred= "N";
+
+
+usersList[5].active = false;
+usersList[5].onDutyFor = 6;
+usersList[5].currentShiftAssignment = "M";
+usersList[0].preferred= "M";
+
+
+usersList[6].active = false;
+usersList[6].onDutyFor = 6;
+usersList[6].currentShiftAssignment = "N";
+usersList[0].preferred= "N";
+
+
+usersList[7].active = false;
+usersList[7].onDutyFor = onHoliday;
+usersList[7].currentShiftAssignment = "";
+usersList[0].preferred= "M";
+
+///////////////////////////// Inserting sample history data for users ends here
+
+//######## Debug area starts here
+//gs.log(JSON.stringify(usersList));
+
+/*
+for(var i=0; i<shiftsList.length; i++){
+	gs.log("Sys id is: "+ shiftsList[i].id);
+}
+
+for(i=0; i<usersList.length; i++){
+	gs.log("User is: "+ usersList[i].id + "   |||   Preferred shift is: " + usersList[i].preferred);
+}
+*/
+//######## Debug area ends here
+
+
+referenceTable = new Array(totalDays+1);
+
+for (var i = 0; i <= totalDays; i++) {
+//The number of columns in reference table is staffCount+1 in order to keep one column for date info etc.
+  referenceTable[i] = new Array(staffCount+1);
+}
+
+for(i=0; i<totalDays; i++){
+	for(var j=0; j<staffCount; j++){
+		referenceTable[i][j]={
+			onDutyFor: 0
+		};
+		if(usersList[j].onDutyFor == onHoliday)referenceTable[i][j].onDutyFor = onHoliday;
+	}
+}
+//gs.log("The table is: " +JSON.stringify(referenceTable));
+
+
+//Reference table construction starts here
+for(i=0; i<totalDays; i++){
+	today = new GlideDate();
+	today.addDays(i);
+	
+	numberOfPeopleOnShift=0;
+	
+	for(j=0; j<=staffCount; j++){
+		//gs.log(j);
+		if(j!=staffCount){
+			// Save the current state for the user
+			referenceTable[i][j]={
+				active: usersList[j].active,
+				onDutyFor: usersList[j].onDutyFor,
+				currentShiftAssignment: usersList[j].currentShiftAssignment
+			};
+			
+			//
+			
+
+			//This one keeps the record of number of people working and the individual values in the list
+			if(returnTrueIfUserOnShift(referenceTable[i][j].onDutyFor,numOfWorkingDays)){
+				onShiftMembers.push(usersList[j].number);
+				numberOfPeopleOnShift++;
+			}
+			
+			/*
+			if(referenceTable[i][j].onDutyFor<0 && referenceTable[i][j].onDutyFor!=onHoliday){
+				activeMembersOnHoliday.push(j);
+			}
+			*/
+			
+			// Sort the members of shift least duty to most duty
+			onShiftMembers.sort(function(a, b) {
+				return (usersList[a].onDutyFor) - (usersList[b].onDutyFor);
+			});
+			
+			//Change the value of number of on duty days for the user (This value is to be used for the next row)
+			//gs.log(referenceTable[i+1][j].onDutyFor);
+
+			usersList[j].onDutyFor = nextOnDutyForValue(usersList[j].onDutyFor, onHoliday, numOfDaysInWeek,  referenceTable[i+1][j].onDutyFor?referenceTable[i+1][j].onDutyFor:0);
+			
+			//######### DEBUG starts here
+			//Check if the referenceTable[i+1][j].onDutyFor returns proper comaparison in case the table value is null
+			//######### DEBUG ends here
+
+			
+			//Change the value of shift assignment if the user has reached the end of his work week (total number of days in the week, i.e, 6
+			if(usersList[j].onDutyFor==numOfDaysInWeek)
+				usersList[j].currentShiftAssignment = changeShiftAssignmentValue(usersList[j].currentShiftAssignment);
+			
+		}
+		else{
+			//This is the last column of reference table row and will contain the metadata for the row
+			referenceTable[i][j]={
+				//date: today.getByFormat("dd/MM/yyyy"),
+				date: today,
+				members_before_optimization: numberOfPeopleOnShift
+			};
+			//gs.log("Date is: " + referenceTable[i][j].date + " Weekday is: "+ referenceTable[i][j].weekday);
+		}
+	}
+	//The normal assignment ends here. We start applying our upper limit (and potentially lower limit) now.
+	
+
+	//gs.log(JSON.stringify(onShiftMembers));
+	if(numberOfPeopleOnShift>hardUpperLimit){
+		
+		// put people who have been working the longest on holiday
+		while(numberOfPeopleOnShift>hardUpperLimit){
+			
+			
+			//Pop a member from onShift members
+			temp = onShiftMembers.pop();
+			//gs.log("Ran upper limit optimization once: On: " + temp);
+			
+			//Change the members next day value
+			referenceTable[i][temp].onDutyFor = placeOnHoliday(numOfWorkingDays);
+			usersList[temp].onDutyFor = nextOnDutyForValue(referenceTable[i][temp].onDutyFor, onHoliday, numOfDaysInWeek, referenceTable[i+1][temp].onDutyFor?referenceTable[i+1][temp].onDutyFor:0);
+			if(usersList[temp].onDutyFor==numOfDaysInWeek)
+				usersList[temp].currentShiftAssignment = changeShiftAssignmentValue(usersList[temp].currentShiftAssignment);
+			
+			//reduce the numberOfPeopleOnShift count
+			numberOfPeopleOnShift--;
+		}
+	}
+	referenceTable[i][staffCount].members_after_optimization=numberOfPeopleOnShift;
+	
+
+	onShiftMembers.length=0;
+	//gs.log(JSON.stringify(referenceTable[i]));
+}
+
+
+
+
+//######### DEBUG starts here
+//Remove all previous entries from reference table
+var del = new GlideRecord("x_wab_it_ops_sched_reference_table");
+del.query();
+del.deleteMultiple();
+
+//Now repopulate with new entries
+for(i=0; i<totalDays; i++){
+	var nw = new GlideRecord('x_wab_it_ops_sched_reference_table');
+	nw.initialize();
+	nw.setValue('date', referenceTable[i][8].date);
+	nw.setValue('user_1_on_duty_for', referenceTable[i][0].onDutyFor);
+	nw.setValue('user_1_current_assignment',  referenceTable[i][0].currentShiftAssignment);
+	nw.setValue('user_2_on_duty_for', referenceTable[i][1].onDutyFor);
+	nw.setValue('user_2_current_assignment',  referenceTable[i][1].currentShiftAssignment);
+	nw.setValue('user_3_on_duty_for', referenceTable[i][2].onDutyFor);
+	nw.setValue('user_3_current_assignment',  referenceTable[i][2].currentShiftAssignment);
+	nw.setValue('user_4_on_duty_for', referenceTable[i][3].onDutyFor);
+	nw.setValue('user_4_current_assignment',  referenceTable[i][3].currentShiftAssignment);
+	nw.setValue('user_5_on_duty_for', referenceTable[i][4].onDutyFor);
+	nw.setValue('user_5_current_assignment',  referenceTable[i][4].currentShiftAssignment);
+	nw.setValue('user_6_on_duty_for', referenceTable[i][5].onDutyFor);
+	nw.setValue('user_6_current_assignment',  referenceTable[i][5].currentShiftAssignment);
+	nw.setValue('user_7_on_duty_for', referenceTable[i][6].onDutyFor);
+	nw.setValue('user_7_current_assignment',  referenceTable[i][6].currentShiftAssignment);
+	nw.setValue('user_8_on_duty_for', referenceTable[i][7].onDutyFor);
+	nw.setValue('user_8_current_assignment',  referenceTable[i][7].currentShiftAssignment);
+	nw.setValue('members_before_optimization', referenceTable[i][8].members_before_optimization);
+	nw.setValue('members_after_optimization',  referenceTable[i][8].members_after_optimization);
+	nw.insert();
+}
+//######### DEBUG ends here
+
+
+for(i=0; i<totalDays; i++){
+	
+	//Take all members on shift for the day into an array
+	onShiftMembers.length=0;
+	for(j=0; j<staffCount; j++){
+		if(returnTrueIfUserOnShift(referenceTable[i][j].onDutyFor,numOfWorkingDays)){
+			onShiftMembers.push(usersList[j].number);
+		}
+	}
+	
+	morningShiftMembers.length=0;
+	afternoonShiftMembers.length=0;
+	nightShiftMembers.length=0;
+	poolArray.length=0;
+	
+	////// Portion to be automated starts here
+	
+	//Sorting members according to shift preferences (A comes first, M comes next, N comes at the end)
+	onShiftMembers.sort(function(a, b) {
+		if((usersList[a].preferred) < (usersList[b].preferred)){
+			return -1;
+		}else{
+			return 1;
+		}
+	});
+	//Alphabetical sorting re
+	if(onShiftMembers.length==4){
+		//For 4 members, follow 1+2+1 plan
+		morningShiftMembers.push(1);
+		afternoonShiftMembers.push(2);
+		nightShiftMembers.push(1);
+	}else if(onShiftMembers.length==5){
+		//For 5 members, follow 2+2+1
+		morningShiftMembers.push(2);
+		afternoonShiftMembers.push(2);
+		nightShiftMembers.push(1);
+	}
+	
+	tempSize = onShiftMembers.length;
+	//Iterate through onShiftMembers and assign to respective shifts if possible
+	for(j=0; j<tempSize; j++){
+		temp=true;
+		if(usersList[onShiftMembers[j]].preferred=="A"){
+			if(afternoonShiftMembers.length<(afternoonShiftMembers[0]+1)){
+				afternoonShiftMembers.push(onShiftMembers[j]);
+				temp=false;
+			}
+		}else if(usersList[onShiftMembers[j]].preferred=="M"){
+			if(morningShiftMembers.length<(morningShiftMembers[0]+1)){
+				morningShiftMembers.push(onShiftMembers[j]);
+				temp=false;
+			}
+		}else if(usersList[onShiftMembers[j]].preferred=="N"){
+			if(nightShiftMembers.length<(nightShiftMembers[0]+1)){
+				nightShiftMembers.push(onShiftMembers[j]);
+				temp=false;
+			}
+		}
+		
+		if(temp){
+			poolArray.push(onShiftMembers[j]);
+		}
+		temp=false;
+	}
+	tempSize=0;
+	//Now assign the remainder to other places
+	//Morning
+	temp=true;
+	while(temp){
+		if(morningShiftMembers.length>=(morningShiftMembers[0]+1)) {
+			temp=false;
+			break;
+		}
+		morningShiftMembers.push(poolArray.pop());
+	}
+	//Afternoon
+	temp=true;
+	while(temp){
+		if(afternoonShiftMembers.length>=(afternoonShiftMembers[0]+1)) {
+			temp=false;
+			break;
+		}
+		afternoonShiftMembers.push(poolArray.pop());
+	}
+	//Afternoon
+	temp=true;
+	while(temp){
+		if(nightShiftMembers.length>=(nightShiftMembers[0]+1)) {
+			temp=false;
+			break;
+		}
+		nightShiftMembers.push(poolArray.pop());
+	}
+	
+	shiftDaysList.push(
+		{
+		members: onShiftMembers.slice(),
+		morning: morningShiftMembers.slice(),
+		afternoon: afternoonShiftMembers.slice(),
+		night: nightShiftMembers.slice()
+		}
+	);
+	
+	//Done assigning to different shifts, now put them in array
+	onShiftMembers.length=0;
+	morningShiftMembers.length=0;
+	afternoonShiftMembers.length=0;
+	nightShiftMembers.length=0;
+	poolArray.length=0;
+	////// Portion to be automated ends here
+}
+
+/*
+for(i=0; i<shiftDaysList.length; i++){
+	gs.log(JSON.stringify(shiftDaysList[i]));
+}
+*/
+
+//######### DEBUG starts here
+//Remove all previous entries from reference table
+del = new GlideRecord("x_wab_it_ops_sched_shift_days");
+del.query();
+del.deleteMultiple();
+
+//Now repopulate with new entries
+for(i=0; i<totalDays; i++){
+	nw = new GlideRecord('x_wab_it_ops_sched_shift_days');
+	nw.initialize();
+	nw.setValue('shift_day', referenceTable[i][8].date);
+	nw.setValue('shift_1_user',usersList[shiftDaysList[i].morning[1]].id );
+	if (typeof shiftDaysList[i].morning[1] !== 'undefined')
+		nw.setValue('shift_1_user_2',usersList[shiftDaysList[i].morning[2]].id );
+	nw.setValue('shift_2_user',usersList[shiftDaysList[i].afternoon[1]].id );
+	nw.setValue('shift_2_user_2',usersList[shiftDaysList[i].afternoon[2]].id );
+	nw.setValue('shift_3_user',usersList[shiftDaysList[i].night[1]].id );
+	nw.setValue('shift_3_user_2',usersList[shiftDaysList[i].night[2]].id );
+
+	nw.insert();
+}
+//######### DEBUG ends here
+
+//$$$$$$$$$$$ Portion to be automated starts here
+//Populating shift entries table starts here
+//Remove all previous entries from shift entrie table
+del = new GlideRecord("x_wab_it_ops_sched_shift_entries");
+del.query();
+del.deleteMultiple();
+
+for(i=0; i<totalDays; i++){
+	
+	
+	//Morning shift entries
+	tempSize = shiftDaysList[i].morning.length;
+	for(j=1; j<tempSize; j++){
+		startTime = new GlideDateTime(shiftsList[0].start);
+		startTime.addDays(shiftsList[0].startDifference+i);
+		endTime = new GlideDateTime(shiftsList[0].end);
+		endTime.addDays(shiftsList[0].endDifference+i);
+		
+		//gs.log("Start difference is: " + shiftsList[0].startDifference);
+		//gs.log("Start time is: " + startTime);
+		//gs.log("End time is: " + endTime);
+
+		nw = new GlideRecord('x_wab_it_ops_sched_shift_entries');
+		nw.initialize();
+		nw.setValue('shift_date', referenceTable[i][8].date);
+		nw.setValue('shift_start_time', startTime);
+		nw.setValue('shift_end_time', endTime);
+		nw.setValue('shift_user', usersList[shiftDaysList[i].morning[j]].id);
+		nw.insert();
+		
+		gs.log("Pushed to morning shift the values: "+ referenceTable[i][8].date + "  " + startTime +"  "+ endTime +  " "+usersList[shiftDaysList[i].morning[j]].id);
+		
+		startTime=null;
+		endTime=null;
+	}
+	tempSize=0;
+	
+	//Afternoon shift entries
+	tempSize = shiftDaysList[i].afternoon.length;
+	for(j=1; j<tempSize; j++){
+		startTime = new GlideDateTime(shiftsList[1].start);
+		startTime.addDays(shiftsList[1].startDifference+i);
+		endTime = new GlideDateTime(shiftsList[1].end);
+		endTime.addDays(shiftsList[1].endDifference+i);
+		
+		nw = new GlideRecord('x_wab_it_ops_sched_shift_entries');
+		nw.initialize();
+		nw.setValue('shift_date', referenceTable[i][8].date);
+		nw.setValue('shift_start_time', startTime);
+		nw.setValue('shift_end_time', endTime);
+		nw.setValue('shift_user', usersList[shiftDaysList[i].afternoon[j]].id);
+		nw.insert();
+		
+		gs.log("Pushed to afternoon shift the values: "+ referenceTable[i][8].date + "  " + startTime +"  "+ endTime +  " "+usersList[shiftDaysList[i].afternoon[j]].id);
+		
+		startTime=null;
+		endTime=null;
+	}
+	tempSize=0;
+	
+	//Afternoon shift entries
+	tempSize = shiftDaysList[i].night.length;
+	//gs.log("tempSize for night is: "+ tempSize);
+	for(j=1; j<tempSize; j++){
+		startTime = new GlideDateTime(shiftsList[2].start);
+		startTime.addDays(shiftsList[2].startDifference+i);
+		endTime = new GlideDateTime(shiftsList[2].end);
+		endTime.addDays(shiftsList[2].endDifference+i);
+		
+		nw = new GlideRecord('x_wab_it_ops_sched_shift_entries');
+		nw.initialize();
+		nw.setValue('shift_date', referenceTable[i][8].date);
+		nw.setValue('shift_start_time', startTime);
+		nw.setValue('shift_end_time', endTime);
+		nw.setValue('shift_user', usersList[shiftDaysList[i].night[j]].id);
+		nw.insert();
+		
+		gs.log("Pushed to night shift the values: "+ referenceTable[i][8].date + "  " + startTime +"  "+ endTime +  " "+usersList[shiftDaysList[i].night[j]].id);
+		
+		startTime=null;
+		endTime=null;
+	}
+	tempSize=0;
+	
+	
+
+	
+	//gs.log("Inserted into Shift entries");
+}
+
+
+//$$$$$$$$$$$ Portion to be automated ends here]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-25 10:51:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f8fff954dbe7d410458d789e3b961901</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Schedule make on Holiday update</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_script_f8fff954dbe7d410458d789e3b961901</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-10-02 09:25:40</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f8fff954dbe7d410458d789e3b961901"/>
+</record_update>

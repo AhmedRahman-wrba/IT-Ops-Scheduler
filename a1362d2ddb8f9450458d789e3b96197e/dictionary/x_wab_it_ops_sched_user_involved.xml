@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="User involved" max_length="40" name="x_wab_it_ops_sched_user_involved" sizeclass="8" text_index="true" type="collection">
+        <element attributes="encode_utf8=false" label="Preferred Shift" max_length="32" name="preferred_shift" reference="x_wab_it_ops_sched_shift_table" type="reference"/>
+        <element attributes="encode_utf8=false" display="true" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+        <index name="index2">
+            <element name="preferred_shift"/>
+        </index>
+    </element>
+</database>

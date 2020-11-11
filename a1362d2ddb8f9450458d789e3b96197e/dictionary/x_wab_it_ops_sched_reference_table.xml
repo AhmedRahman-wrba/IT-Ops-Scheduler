@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Reference Table" max_length="40" name="x_wab_it_ops_sched_reference_table" sizeclass="0" type="collection">
+        <element label="date" max_length="40" name="date" type="glide_date"/>
+        <element label="Members after optimization" max_length="40" name="members_after_optimization" type="integer"/>
+        <element label="Members before optimization" max_length="40" name="members_before_optimization" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="User 1 active" max_length="40" name="user_1_active" type="boolean"/>
+        <element label="User 1 Current Assignment" max_length="1000" name="user_1_current_assignment" type="string"/>
+        <element label="User  1 On Duty For" max_length="40" name="user_1_on_duty_for" type="integer"/>
+        <element label="User 2 active" max_length="40" name="user_2_active" type="boolean"/>
+        <element label="User 2 Current Assignment" max_length="1000" name="user_2_current_assignment" type="string"/>
+        <element label="User 2 On Duty For" max_length="40" name="user_2_on_duty_for" type="integer"/>
+        <element label="User 3 active" max_length="40" name="user_3_active" type="boolean"/>
+        <element label="User 3 Current Assignment" max_length="1000" name="user_3_current_assignment" type="string"/>
+        <element label="User 3 On Duty For" max_length="40" name="user_3_on_duty_for" type="integer"/>
+        <element label="User 4 active" max_length="40" name="user_4_active" type="boolean"/>
+        <element label="User 4 Current Assignment" max_length="1000" name="user_4_current_assignment" type="string"/>
+        <element label="User 4 On Duty For" max_length="40" name="user_4_on_duty_for" type="integer"/>
+        <element label="User 5 active" max_length="40" name="user_5_active" type="boolean"/>
+        <element label="User 5 Current Assignment" max_length="1000" name="user_5_current_assignment" type="string"/>
+        <element label="User 5 On Duty For" max_length="40" name="user_5_on_duty_for" type="integer"/>
+        <element label="User 6 active" max_length="40" name="user_6_active" type="boolean"/>
+        <element label="User 6 Current Assignment" max_length="1000" name="user_6_current_assignment" type="string"/>
+        <element label="User 6 On Duty For" max_length="40" name="user_6_on_duty_for" type="integer"/>
+        <element label="User 7 active" max_length="40" name="user_7_active" type="boolean"/>
+        <element label="User 7 Current Assignment" max_length="1000" name="user_7_current_assignment" type="string"/>
+        <element label="User 7 On Duty For" max_length="40" name="user_7_on_duty_for" type="integer"/>
+        <element label="User 8 active" max_length="40" name="user_8_active" type="boolean"/>
+        <element label="User 8 Current Assignment" max_length="1000" name="user_8_current_assignment" type="string"/>
+        <element label="User 8 On Duty For" max_length="40" name="user_8_on_duty_for" type="integer"/>
+        <element label="User 8 Preferred Assignment" max_length="15" name="user_8_preferred_assignment" type="string"/>
+        <element label="User 9 Active" max_length="40" name="user_9_active" type="boolean"/>
+        <element label="User 9 Current Assignment" max_length="1000" name="user_9_current_assignment" type="string"/>
+        <element label="User 9 On Duty For" max_length="40" name="user_9_on_duty_for" type="integer"/>
+    </element>
+</database>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="IT Ops Scheduler">0bcb2d69dbcf9450458d789e3b961959</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter table="x_wab_it_ops_sched_shift_table">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_app_module/>
+        <mobile_title>Open</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_wab_it_ops_sched_shift_table</name>
+        <order>3</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <survey/>
+        <survey_overwrite>true</survey_overwrite>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>93cb2d69dbcf9450458d789e3b961964</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_app_module_93cb2d69dbcf9450458d789e3b961964</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:51</sys_updated_on>
+        <timeline_page/>
+        <title>Open</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <view_on_mobile>false</view_on_mobile>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</application>
+        <file_path/>
+        <instance_id>ddf3e82ddb73ae404c1ff70fbf9619ee</instance_id>
+        <instance_name>warbabankkw</instance_name>
+        <name>sys_app_module_93cb2d69dbcf9450458d789e3b961964</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="IT Ops Scheduler">0bcb2d69dbcf9450458d789e3b961959</application><assessment/><content_page/><device_type/><filter table="x_wab_it_ops_sched_shift_table">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></filter><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_app_module/><mobile_title>Open</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_wab_it_ops_sched_shift_table</name><order>3</order><override_menu_roles>false</override_menu_roles><query/><report/><roles/><survey/><survey_overwrite>true</survey_overwrite><sys_class_name>sys_app_module</sys_class_name><sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by><sys_created_on>2020-09-04 09:59:51</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path/><sys_id>93cb2d69dbcf9450458d789e3b961964</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Open</sys_name><sys_overrides/><sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope><sys_update_name>sys_app_module_93cb2d69dbcf9450458d789e3b961964</sys_update_name><sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by><sys_updated_on>2020-09-04 09:59:51</sys_updated_on><timeline_page/><title>Open</title><uncancelable>false</uncancelable><view_name/><view_on_mobile>false</view_on_mobile><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1685549386</payload_hash>
+        <record_name>Open</record_name>
+        <reverted_from/>
+        <source>e53661addb8f9450458d789e3b961927</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:51</sys_created_on>
+        <sys_id>53cb6d69dbcf9450458d789e3b961914</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>174588edb1a0000001</sys_recorded_at>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:51</sys_updated_on>
+        <type>Module</type>
+        <update_guid>5bcb6d69ddcf94507168be3c9b07db13</update_guid>
+        <update_guid_history>5bcb6d69ddcf94507168be3c9b07db13:-1685549386</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 25/09/2020 01:39:54 PM">b65ef9d0dbe7d410458d789e3b9619df</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-25 10:39:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>41b44d4274e4437199aa60e66e8f0f91</sys_id>
+        <sys_metadata>93cb2d69dbcf9450458d789e3b961964</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_scope_delete display_value="">2b09ec3683614e248b7b5261b9073f39</sys_scope_delete>
+        <sys_update_name>sys_app_module_93cb2d69dbcf9450458d789e3b961964</sys_update_name>
+        <sys_update_version display_value="sys_app_module_93cb2d69dbcf9450458d789e3b961964">53cb6d69dbcf9450458d789e3b961914</sys_update_version>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-25 10:39:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

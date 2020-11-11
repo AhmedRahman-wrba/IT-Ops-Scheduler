@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Shift History" max_length="40" name="x_wab_it_ops_sched_shift_history" sizeclass="0" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Reference Table History Data" max_length="255" name="reference_table_history_data" read_only="true" type="string_full_utf8"/>
+    </element>
+</database>

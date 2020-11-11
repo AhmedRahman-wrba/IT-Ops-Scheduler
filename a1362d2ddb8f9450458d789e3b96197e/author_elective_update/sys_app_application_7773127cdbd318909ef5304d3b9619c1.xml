@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <mobile_app_menu/>
+        <name/>
+        <order>100</order>
+        <roles>x_wab_it_ops_sched.admin,x_wab_it_ops_sched.supervisor,x_wab_it_ops_sched.user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-14 15:13:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>7773127cdbd318909ef5304d3b9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reference Table</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_app_application_7773127cdbd318909ef5304d3b9619c1</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-14 15:13:56</sys_updated_on>
+        <title>Reference Table</title>
+        <view_name/>
+        <view_on_mobile>false</view_on_mobile>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</application>
+        <file_path/>
+        <instance_id>ddf3e82ddb73ae404c1ff70fbf9619ee</instance_id>
+        <instance_name>warbabankkw</instance_name>
+        <name>sys_app_application_7773127cdbd318909ef5304d3b9619c1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><mobile_app_menu/><name/><order>100</order><roles>x_wab_it_ops_sched.admin,x_wab_it_ops_sched.supervisor,x_wab_it_ops_sched.user</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by><sys_created_on>2020-09-14 15:13:56</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path/><sys_id>7773127cdbd318909ef5304d3b9619c1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Reference Table</sys_name><sys_overrides/><sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope><sys_update_name>sys_app_application_7773127cdbd318909ef5304d3b9619c1</sys_update_name><sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by><sys_updated_on>2020-09-14 15:13:56</sys_updated_on><title>Reference Table</title><view_name/><view_on_mobile>false</view_on_mobile></sys_app_application></record_update>]]></payload>
+        <payload_hash>1273775025</payload_hash>
+        <record_name>Reference Table</record_name>
+        <reverted_from/>
+        <source>e53661addb8f9450458d789e3b961927</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-14 15:13:56</sys_created_on>
+        <sys_id>b5939e3cdbd318909ef5304d3b96195c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1748d2e02a70000001</sys_recorded_at>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-14 15:13:56</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>bd939e3cf3d318908251efcdf18c795b</update_guid>
+        <update_guid_history>bd939e3cf3d318908251efcdf18c795b:1273775025</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 14/09/2020 06:16:00 PM">f7041e7cdbd318909ef5304d3b9619c5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-14 15:16:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>b4bc96b4ec1e4b85baaadb9a41935491</sys_id>
+        <sys_metadata>7773127cdbd318909ef5304d3b9619c1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reference Table</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_scope_delete display_value="">2b09ec3683614e248b7b5261b9073f39</sys_scope_delete>
+        <sys_update_name>sys_app_application_7773127cdbd318909ef5304d3b9619c1</sys_update_name>
+        <sys_update_version display_value="sys_app_application_7773127cdbd318909ef5304d3b9619c1">b5939e3cdbd318909ef5304d3b96195c</sys_update_version>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-14 15:16:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

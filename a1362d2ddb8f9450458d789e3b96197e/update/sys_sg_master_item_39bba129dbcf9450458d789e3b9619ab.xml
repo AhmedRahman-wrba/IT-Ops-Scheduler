@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="INSERT_OR_UPDATE">
+        <condition_order/>
+        <datasource_table>x_wab_it_ops_sched_shift_days</datasource_table>
+        <datasource_table_condition/>
+        <embedded_screen display_value="Shift Days Form Screen">71bba129dbcf9450458d789e3b9619a6</embedded_screen>
+        <item_view display_value="Shift Days List Screen Item View">7dbba129dbcf9450458d789e3b961996</item_view>
+        <name>Shift Days master_item</name>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>Ahmed.Rahman@WARBABANK.COM</sys_created_by>
+        <sys_created_on>2020-09-04 09:59:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>39bba129dbcf9450458d789e3b9619ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Shift Days master_item</sys_name>
+        <sys_package display_value="IT Ops Scheduler" source="x_wab_it_ops_sched">a1362d2ddb8f9450458d789e3b96197e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IT Ops Scheduler">a1362d2ddb8f9450458d789e3b96197e</sys_scope>
+        <sys_update_name>sys_sg_master_item_39bba129dbcf9450458d789e3b9619ab</sys_update_name>
+        <sys_updated_by>Ahmed.Rahman@WARBABANK.COM</sys_updated_by>
+        <sys_updated_on>2020-09-04 09:59:28</sys_updated_on>
+    </sys_sg_master_item>
+</record_update>

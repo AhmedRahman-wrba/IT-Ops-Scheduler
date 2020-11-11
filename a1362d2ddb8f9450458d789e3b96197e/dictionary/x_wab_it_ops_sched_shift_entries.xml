@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Shift Entries" max_length="40" name="x_wab_it_ops_sched_shift_entries" sizeclass="0" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element display="true" label="Shift Date" max_length="40" name="shift_date" type="glide_date"/>
+        <element label="Shift End Time" max_length="40" name="shift_end_time" type="glide_date_time"/>
+        <element label="Shift Start Time" max_length="40" name="shift_start_time" type="glide_date_time"/>
+        <element label="Shift User" max_length="32" name="shift_user" reference="x_wab_it_ops_sched_user_involved" type="reference"/>
+        <index name="index">
+            <element name="shift_user"/>
+        </index>
+    </element>
+</database>
